@@ -1,3 +1,5 @@
+// Copyright 2023, Gaimin.io Limited, All Rights Reserved
+
 #include "Fetch.h"
 
 #define LOCTEXT_NAMESPACE "FFetchModule"

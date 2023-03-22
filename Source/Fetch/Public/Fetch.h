@@ -1,3 +1,5 @@
+// Copyright 2023, Gaimin.io Limited, All Rights Reserved
+
 #pragma once
 
 #include "CoreMinimal.h"

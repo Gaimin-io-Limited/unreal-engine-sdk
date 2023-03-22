@@ -1,3 +1,5 @@
+// Copyright 2023, Gaimin.io Limited, All Rights Reserved
+
 #include "FetchAPI.h"
 #include "FetchRequest.h"
 #include "Misc/Base64.h"

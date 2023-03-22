@@ -1,3 +1,5 @@
+// Copyright 2023, Gaimin.io Limited, All Rights Reserved
+
 #include "FetchResponse.h"
 
 FString UFetchResponse::GetHeader(FString Key)

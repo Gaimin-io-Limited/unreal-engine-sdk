@@ -1,3 +1,5 @@
+// Copyright 2023, Gaimin.io Limited, All Rights Reserved
+
 #include "SimpleJson.h"
 #include "SimpleJsonValue.h"
 #include "Json.h"
