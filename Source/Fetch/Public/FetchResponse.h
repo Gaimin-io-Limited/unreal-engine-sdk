@@ -8,30 +8,27 @@
 #include "Runtime/Online/HTTP/Public/Http.h"
 #include "FetchResponse.generated.h"
 
-/**
- *
- */
 UCLASS(BlueprintType)
 class FETCH_API UFetchResponse : public UObject
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	UPROPERTY(BlueprintReadOnly, Category = "Gaimin");
-	int32 StatusCode;
+    UPROPERTY(BlueprintReadOnly, Category = "Gaimin");
+    int32 StatusCode;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Gaimin");
-	FString ResponseText;
+    UPROPERTY(BlueprintReadOnly, Category = "Gaimin");
+    FString ResponseText;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Gaimin");
-	TArray<FFetchHeader> Headers;
+    UPROPERTY(BlueprintReadOnly, Category = "Gaimin");
+    TArray<FFetchHeader> Headers;
 
 private:
-	FHttpResponsePtr Original;
+    FHttpResponsePtr Original;
 
 public:
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Gaimin")
-		FString GetHeader(FString Key);
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Gaimin")
+        FString GetHeader(FString Key);
 
-	static UFetchResponse* Get(FHttpResponsePtr Response);
+    static UFetchResponse* Get(FHttpResponsePtr Response);
 };
