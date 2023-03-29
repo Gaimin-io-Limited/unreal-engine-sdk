@@ -22,7 +22,7 @@ UFetchRequest* UFetchAPI::PublicKey()
     FFetchOptions Options;
     Options.Headers.Add({ "Content-Type", "application/json" });
     Options.Headers.Add({ "Accept", "application/json" });
-    return Fetch("https://api.qa.gaimin.gg/api/public/v1/public-key", Options);
+    return Fetch("https://api.gaimin.gg/api/public/v1/public-key", Options);
 }
 
 UFetchRequest* UFetchAPI::PlayerToken(FString BearerToken)
@@ -32,31 +32,29 @@ UFetchRequest* UFetchAPI::PlayerToken(FString BearerToken)
     Options.Headers.Add({ "Accept", "application/json" });
     Options.Headers.Add({ "Authorization", "Bearer " + BearerToken });
 
-    return Fetch("https://api.qa.gaimin.gg/api/public/v1/player/token", Options);
+    return Fetch("https://api.gaimin.gg/api/public/v1/player/token", Options);
 }
 
-UFetchRequest* UFetchAPI::PlayerBalance(FString PlayerToken)
+UFetchRequest* UFetchAPI::PlayerDetails(FString PlayerToken)
 {
     FFetchOptions Options;
     Options.Headers.Add({ "Content-Type", "application/json" });
     Options.Headers.Add({ "Accept", "application/json" });
-    return Fetch("https://api.qa.gaimin.gg/api/public/v1/player/balance?playerToken=" + PlayerToken, Options);
+    return Fetch("https://api.gaimin.gg/api/public/v1/player/details?playerToken=" + PlayerToken, Options);
 }
 
-UFetchRequest* UFetchAPI::PlayerTokens(FString ApiKey, FString PlayerToken)
+UFetchRequest* UFetchAPI::PlayerTokens(FString ProductId, FString PlayerToken, FString Chains)
 {
     FFetchOptions Options;
     Options.Headers.Add({ "Content-Type", "application/json" });
     Options.Headers.Add({ "Accept", "application/json" });
-    Options.Headers.Add({ "X-Api-Key", ApiKey });
-    return Fetch("https://api.qa.gaimin.gg/api/public/v1/player/tokens?playerToken=" + PlayerToken + "&chains", Options);
+    return Fetch("https://api.gaimin.gg/api/public/v1/player/tokens?productId=" + ProductId + "&playerToken=" + PlayerToken + "&chainDtos=" + Chains, Options);
 }
 
-UFetchRequest* UFetchAPI::PlayerTokensRaw(FString ApiKey, FString PlayerToken)
+UFetchRequest* UFetchAPI::PlayerTokensRaw(FString ProductId, FString PlayerToken, FString Chains)
 {
     FFetchOptions Options;
     Options.Headers.Add({ "Content-Type", "application/json" });
     Options.Headers.Add({ "Accept", "application/json" });
-    Options.Headers.Add({ "X-Api-Key", ApiKey });
-    return Fetch("https://api.qa.gaimin.gg/api/public/v1/player/tokens/raw?playerToken=" + PlayerToken + "&chains", Options);
+    return Fetch("https://api.gaimin.gg/api/public/v1/player/tokens/raw?productId=" + ProductId + "&playerToken=" + PlayerToken + "&chainDtos=" + Chains, Options);
 }

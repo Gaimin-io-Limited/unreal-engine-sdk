@@ -26,13 +26,13 @@ public:
         static UFetchRequest* PlayerToken(FString BearerToken);
 
     UFUNCTION(BlueprintCallable, Category = "Gaimin")
-        static UFetchRequest* PlayerBalance(FString PlayerToken);
+        static UFetchRequest* PlayerDetails(FString PlayerToken);
 
     UFUNCTION(BlueprintCallable, Category = "Gaimin")
-        static UFetchRequest* PlayerTokens(FString ApiKey, FString PlayerToken);
+        static UFetchRequest* PlayerTokens(FString ProductId, FString PlayerToken, FString Chains);
 
     UFUNCTION(BlueprintCallable, Category = "Gaimin")
-        static UFetchRequest* PlayerTokensRaw(FString ApiKey, FString PlayerToken);
+        static UFetchRequest* PlayerTokensRaw(FString ProductId, FString PlayerToken, FString Chains);
 
 private:
 
